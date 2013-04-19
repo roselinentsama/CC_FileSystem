@@ -43,8 +43,8 @@ public void Ajouter(RACINE f){
 		int taille=1;
 		if(taille==0)throw new repertoireException("erreur sur le calcul de la taille");
 		{System.out.println("erreur la taille ne peut pas etre 0");}
-		/*if(taille<1)throw new repertoireException("erreur sur le calcul de la taille");
-		{System.out.println("erreur la taille ne peut pas etre nŽgatif");}*/
+		if(taille<1)throw new repertoireException("erreur sur le calcul de la taille");
+		{System.out.println("erreur la taille ne peut pas etre nŽgatif");}
 		
 		for (RACINE r : doc){
 			taille+=r.Taille();

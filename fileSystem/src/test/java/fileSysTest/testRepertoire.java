@@ -72,6 +72,7 @@ public class testRepertoire {
 		FICHIER fiche = new FICHIER("fiche", 5);
 		rep.Ajouter(fiche);
 		rep.Taille();
+		assertFalse(rep.Taille()==5);
 		
 	}
 	
@@ -131,17 +132,18 @@ public class testRepertoire {
 				
 		
 	}
-	
-	/*@Test(expected=repertoireException.class)
+	/*
+	@Test(expected=repertoireException.class)
 	public void testtailleNegatif() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		FICHIER fiche = new FICHIER("fiche", -1);
 		rep.Ajouter(fiche);
 		
 		rep.Taille();
-		assertTrue(rep.Taille()<-1);
+		assertTrue(rep.Taille() < -1);
 		
-	}	*/
+	}	
+	*/
 	
 	/*
 	 * calcule de la taille aprs ajout de plusieurs fichiers
