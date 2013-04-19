@@ -31,6 +31,9 @@ public class testRepertoire {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		assertTrue(rep.getNom()=="reper");
 	}
+	/*
+	 * initialisation du fichier
+	 */
 	
 	@Test
 	public void testIntialisationfichier() {
@@ -40,7 +43,7 @@ public class testRepertoire {
 	}
 	
 	/*
-	 * vérification si le fichier a été bien ajouté
+	 * vérification si la reference a ete bien ajoute
 	 */
 	@Test
 	public void testAjoutFichier() {
@@ -126,16 +129,31 @@ public class testRepertoire {
 		
 	}
 	
-	@Test(expected=repertoireException.class)
+	/*@Test(expected=repertoireException.class)
 	public void testtailleNegatif() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
-		FICHIER fiche = new FICHIER("fiche", -5);
+		FICHIER fiche = new FICHIER("fiche", -1);
 		rep.Ajouter(fiche);
 		
 		rep.Taille();
-		assertTrue(rep.Taille()<0);
+		assertTrue(rep.Taille()<-1);
+		
+	}	*/
+	
+	@Test
+	public void testaille() {
+		REPERTOIRE rep = new REPERTOIRE("reper");
+		FICHIER fiche = new FICHIER("fiche", 7);
+		FICHIER fic = new FICHIER("fiche1", 6);
+		
+		rep.Ajouter(fiche);
+		rep.Ajouter(fic);
+		
+		rep.Taille();
+		assertTrue(rep.Taille()==14);
 		
 	}	
+	
 	
 	@Test
 	public void testOuvrirRepertoire() {
