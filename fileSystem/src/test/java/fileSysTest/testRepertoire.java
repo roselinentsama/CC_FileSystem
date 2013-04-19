@@ -115,6 +115,9 @@ public class testRepertoire {
 			
 		
 	}
+	/*
+	 * ce test leve l'exception parce que la taille d'un repertoire ne peut pas etre null
+	 */
 	
 	@Test(expected=repertoireException.class)
 	public void testtailleNull() {
@@ -140,6 +143,10 @@ public class testRepertoire {
 		
 	}	*/
 	
+	/*
+	 * calcule de la taille après ajout de plusieurs fichiers
+	 */
+	
 	@Test
 	public void testaille() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
@@ -154,7 +161,9 @@ public class testRepertoire {
 		
 	}	
 	
-	
+	/*
+	 * consultation du repertoire 
+	 */
 	@Test
 	public void testOuvrirRepertoire() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
