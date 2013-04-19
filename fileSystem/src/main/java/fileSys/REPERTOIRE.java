@@ -16,18 +16,21 @@ public class REPERTOIRE extends RACINE {
 		
 	}
 
-public void AjouterFichier(RACINE f){
+public void Ajouter(RACINE f){
 	if(f==null)throw new repertoireException("on ne peut pas ajouter une référence nulle dans un repertoire");
 	System.out.println("erreur,il faut saisir une référence");
+	for(RACINE r : doc)
+	{
+		if(r.getNom().equals(f.getNom()))throw new repertoireException("on ne peut pas ajouter une rŽference de meme nom");
+		System.out.println("erreur,d'ajout");
+			
+	}
+	if(this.equals(f))throw new repertoireException("on ne peut pas ajouter un repertoire dans un repertoire");
+	
 	doc.add(f);
 }
 
-	public void AjouterRepertoire(REPERTOIRE R) {
-		if(this.getNom().equals(R.getNom()))throw new repertoireException("un repertoire ne peut pas etre con sous repertoire");
-		{System.out.println("erreur pour l'ajout d'un repertoire");}
-		doc.add(R);
-	}
-
+	
 	@Override
 	public void ouvrir() {
 		System.out.println("\n Nom du repertoire :" + super.getNom()  +   " ; Nom de la référence : " + this.doc);

@@ -46,7 +46,7 @@ public class testRepertoire {
 	public void testAjoutFichier() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		FICHIER fiche = new FICHIER("fiche", 5);
-		rep.AjouterFichier(fiche);
+		rep.Ajouter(fiche);
 		assertNotNull(fiche);
 	}
 	/*
@@ -56,7 +56,7 @@ public class testRepertoire {
 	public void testAjoutRepertoire() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		REPERTOIRE rep1 = new REPERTOIRE("repertoire");
-		rep.AjouterRepertoire(rep1);
+		rep.Ajouter(rep1);
 		assertNotSame(rep, rep1);
 		
 		}
@@ -67,7 +67,7 @@ public class testRepertoire {
 	public void testTaille() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		FICHIER fiche = new FICHIER("fiche", 5);
-		rep.AjouterFichier(fiche);
+		rep.Ajouter(fiche);
 		rep.Taille();
 		
 	}
@@ -78,7 +78,7 @@ public class testRepertoire {
 	@Test(expected=repertoireException.class)
 	public void testAjoutMemeRepertoire() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
-		rep.AjouterRepertoire(rep);
+		rep.Ajouter(rep);
 		assertSame(rep, rep);
 			
 	}
@@ -91,8 +91,8 @@ public class testRepertoire {
 	public void testAjoutMemeFichier() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		RACINE fiche=null;
-		rep.AjouterFichier(fiche);
-		rep.AjouterFichier(fiche);
+		rep.Ajouter(fiche);
+		rep.Ajouter(fiche);
 		assertSame(fiche, fiche);
 			
 		
@@ -106,7 +106,7 @@ public class testRepertoire {
 	public void testAjoutReferenceNull() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		RACINE fiche=null;
-		rep.AjouterFichier(fiche);
+		rep.Ajouter(fiche);
 		assertNull(fiche);
 		
 			
@@ -117,7 +117,7 @@ public class testRepertoire {
 	public void testtailleNull() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		RACINE fiche=null;
-		rep.AjouterFichier(fiche);
+		rep.Ajouter(fiche);
 		
 		rep.Taille();
 		assertTrue(rep.Taille()==0);
@@ -129,8 +129,8 @@ public class testRepertoire {
 	@Test(expected=repertoireException.class)
 	public void testtailleNegatif() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
-		RACINE fiche=null;
-		rep.AjouterFichier(fiche);
+		FICHIER fiche = new FICHIER("fiche", -5);
+		rep.Ajouter(fiche);
 		
 		rep.Taille();
 		assertTrue(rep.Taille()<0);
@@ -141,7 +141,7 @@ public class testRepertoire {
 	public void testOuvrirRepertoire() {
 		REPERTOIRE rep = new REPERTOIRE("reper");
 		FICHIER fiche = new FICHIER("fiche", 5);
-		rep.AjouterFichier(fiche);
+		rep.Ajouter(fiche);
 		rep.ouvrir();
 		assertNotNull(fiche);
 	}
